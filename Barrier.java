@@ -28,7 +28,7 @@ public class Barrier extends Actor
  
     public void act() 
     {
-       List bullets = getNeighbours(10, false, AlienBullet.class); //new list with all Pbullets within 2 uinits adjacent to the enemy
+       List bullets = getNeighbours(5, false, AlienBullet.class); //new list with all Pbullets within 2 uinits adjacent to the enemy
        if(bullets.size()>0){
        System.out.println("Alien bullets nearby "+ bullets.size());
     }

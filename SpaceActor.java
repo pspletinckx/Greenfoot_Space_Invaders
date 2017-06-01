@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SpaceActor extends Actor
 {
+    
     /**
      * moveVertically - Move vertically according to stepSize. If StepSize is postive,
      * move down StepSize steps. If stepSize is negative, move up StepSize steps.

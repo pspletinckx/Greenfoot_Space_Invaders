@@ -20,6 +20,7 @@ public class AlienBullet extends Bullet
     
     public boolean isOutOfBounds()
     {
-        return getY() > getWorld().getHeight()-getStepSize();
+        return getY() > getWorld().getHeight()-getStepSize()-1;
+        // Y coordinate is greateer then 100px - 1;
     }
 }

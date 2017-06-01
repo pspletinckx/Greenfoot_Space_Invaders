@@ -16,6 +16,7 @@ public class Alien extends SpaceActor
     {
         Actor bullet = getOneIntersectingObject(ShooterBullet.class);
         if (bullet != null) {
+            getWorld().removeObject(bullet);
             getWorld().removeObject(this);
             Greenfoot.playSound("invaderkilled.wav"); //sound
         }    

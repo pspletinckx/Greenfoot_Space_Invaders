@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Shooter extends SpaceActor
 {
-    private static final int STEP_SIZE = 5;
+    private static final int STEP_SIZE = 1;
     private static final int BULLET_STEP_SIZE = -5;
     private static final int MAX_ACTS_BETWEEN_SHOTS = 30;
     private int actsBetweenShots = Integer.MAX_VALUE;

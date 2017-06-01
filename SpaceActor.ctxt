@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=SpaceActor
-comment0.text=\n\ Write\ a\ description\ of\ class\ SpaceActor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ SpaceActor\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=stepSize
 comment1.target=void\ moveVertically(int)
-comment1.text=\n\ moveVertically\ -\ Move\ vertically\ according\ to\ stepSize.\ If\ StepSize\ is\ postive,\n\ move\ down\ StepSize\ steps.\ If\ stepSize\ is\ negative,\ move\ up\ StepSize\ steps.\n
+comment1.text=\r\n\ moveVertically\ -\ Move\ vertically\ according\ to\ stepSize.\ If\ StepSize\ is\ postive,\r\n\ move\ down\ StepSize\ steps.\ If\ stepSize\ is\ negative,\ move\ up\ StepSize\ steps.\r\n
 comment2.params=stepSize
 comment2.target=void\ moveHorizontally(int)
-comment2.text=\n\ moveHorizontally\ -\ Move\ Horizontally\ according\ to\ stepSize.\ If\ StepSize\ is\ postive,\n\ move\ right\ StepSize\ steps.\ If\ stepSize\ is\ negative,\ move\ left\ StepSize\ steps.\n
+comment2.text=\r\n\ moveHorizontally\ -\ Move\ Horizontally\ according\ to\ stepSize.\ If\ StepSize\ is\ postive,\r\n\ move\ right\ StepSize\ steps.\ If\ stepSize\ is\ negative,\ move\ left\ StepSize\ steps.\r\n
 numComments=3

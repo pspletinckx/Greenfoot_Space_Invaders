@@ -8,8 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Bullet extends SpaceActor
 {
-    private static final int DEFAULT_STEP_SIZE = 5;
+    private static final int DEFAULT_STEP_SIZE = 1;
     private int stepSize;
+    //low resolution act slowdown
+    private int devisor = 5;
+    private int counter = 1;
 
     public Bullet()
     {
@@ -27,7 +30,11 @@ public abstract class Bullet extends SpaceActor
      */
     public void act() 
     {
-        moveVertically(stepSize);
+        if(counter > devisor){
+            moveVertically(stepSize);
+            counter = 1;
+        }
+        counter++;
         if (isOutOfBounds()) {
             getWorld().removeObject(this);
         }    

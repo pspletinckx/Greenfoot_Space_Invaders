@@ -8,10 +8,10 @@ import java.util.List;
  */
 public class Space extends World
 {
-    private static final int WIDTH = 480;
-    private static final int HEIGHT = 480;
-    private static final int ROW_LENGHT = 250;
-    private static final int FIRING_INTERVAL = 60;
+    private static final int WIDTH = 100;
+    private static final int HEIGHT = 100;
+    private static final int ROW_LENGHT = (int)250/5;
+    private static final int FIRING_INTERVAL = 120;
 
     private int actCounter = 0;
 
@@ -22,7 +22,7 @@ public class Space extends World
     public Space()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(WIDTH, HEIGHT, 1); 
+        super(WIDTH, HEIGHT, 5); 
 
         GreenfootImage background = getBackground();
         background.setColor(Color.BLACK);
@@ -44,29 +44,29 @@ public class Space extends World
     
     private void createPlayer(){
         Shooter shooter = new Shooter();
-        addObject(shooter,WIDTH/2, HEIGHT-50);}
-    private void createBarrier(){
-    
-    for(int i=0; i<4; i++){
-        Barrier barrier1 = new Barrier();
-        addObject(barrier1, 100 + i*90, 350);
+        addObject(shooter,WIDTH/2, HEIGHT-15);}
+        private void createBarrier(){
+        
+        for(int i=0; i<4; i++){
+            Barrier barrier1 = new Barrier();
+            addObject(barrier1, 20 + i*20, 75);
+        }
+        
     }
-    
-}
     private void createAliens(){
-            int offset = 40;
+            int offset = 5;
         //eerste rij
         Alien[] alien1 = new Alien[10];
         for(int i=0; i<10; i++) {
             alien1[i] = new Alien();
-            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 20+offset);
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 5+offset);
         }
         
         //tweede rij
         Alien[] alien2 = new Alien[10];
         for(int i=0; i<10; i++) {
             alien1[i] = new Alien2();
-            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10 , 40+offset);
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10 , 10+offset);
         }
         
         //derde rij
@@ -74,7 +74,7 @@ public class Space extends World
         
         for(int i=0; i<10; i++) {
             alien1[i] = new Alien2();
-            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 60+offset);
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 15+offset);
         }
         
         //vierde rij
@@ -82,14 +82,14 @@ public class Space extends World
         
         for(int i=0; i<10; i++) {
             alien1[i] = new Alien3();
-            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 80+offset);
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 20+offset);
         }
         //vijfde rij
          Alien[] alien5 = new Alien[10];
         
         for(int i=0; i<10; i++) {
             alien1[i] = new Alien3();
-            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 100+offset);
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 25+offset);
         }
     }
     

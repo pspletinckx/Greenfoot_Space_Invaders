@@ -12,8 +12,5 @@ public class Alien2 extends Alien
      * Act - do whatever the Alien2 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+  
 }
