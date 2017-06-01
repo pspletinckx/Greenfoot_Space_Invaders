@@ -10,7 +10,7 @@ public class Space extends World
 {
     private static final int WIDTH = 480;
     private static final int HEIGHT = 480;
-    private static final int ROW_LENGHT = 500;
+    private static final int ROW_LENGHT = 250;
     private static final int FIRING_INTERVAL = 60;
 
     private int actCounter = 0;
@@ -38,9 +38,42 @@ public class Space extends World
     {
         Shooter shooter = new Shooter();
         addObject(shooter,WIDTH/2, HEIGHT-50);
-
-        for(int i=0; i<11; i++) {
-            addObject(new Alien(), (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 20);
+        int offset = 40;
+        //eerste rij
+        Alien[] alien1 = new Alien[10];
+        for(int i=0; i<10; i++) {
+            alien1[i] = new Alien();
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 20+offset);
+        }
+        
+        //tweede rij
+        Alien[] alien2 = new Alien[10];
+        for(int i=0; i<10; i++) {
+            alien1[i] = new Alien2();
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10 , 40+offset);
+        }
+        
+        //derde rij
+        Alien[] alien3 = new Alien[10];
+        
+        for(int i=0; i<10; i++) {
+            alien1[i] = new Alien2();
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 60+offset);
+        }
+        
+        //vierde rij
+        Alien[] alien4 = new Alien[10];
+        
+        for(int i=0; i<10; i++) {
+            alien1[i] = new Alien3();
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 80+offset);
+        }
+        //vijfde rij
+         Alien[] alien5 = new Alien[10];
+        
+        for(int i=0; i<10; i++) {
+            alien1[i] = new Alien3();
+            addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 100+offset);
         }
     }
 

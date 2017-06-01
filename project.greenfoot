@@ -1,6 +1,7 @@
 #Greenfoot properties
-#Thu Jun 01 20:41:13 CEST 2017
+#Thu Jun 01 21:17:45 CEST 2017
 target7.naviview.expanded=false
+class.Alien2.image=enemy2.gif
 target4.type=ClassTarget
 target8.showInterface=false
 dependency3.from=Space
@@ -76,6 +77,7 @@ target1.type=ClassTarget
 target7.y=0
 target7.x=0
 target7.name=SpaceActor
+class.Alien2.superclass=Alien
 target6.y=0
 target1.typeParameters=
 target6.x=0
@@ -107,10 +109,12 @@ target1.x=0
 class.Alien.image=enemy1.gif
 dependency1.type=UsesDependency
 readme.height=58
+class.Alien3.image=enemy3.gif
 target2.name=Alien
 readme.name=@README
 target9.type=ClassTarget
 package.numDependencies=8
+class.Alien3.superclass=Alien
 dependency8.from=Shooter
 dependency8.type=UsesDependency
 target3.type=AbstractTarget
