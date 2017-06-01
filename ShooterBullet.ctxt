@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=ShooterBullet
+comment0.text=\n\ Write\ a\ description\ of\ class\ ShooterBullet\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=ShooterBullet()
+comment2.params=stepSize
+comment2.target=ShooterBullet(int)
+comment3.params=
+comment3.target=boolean\ isOutOfBounds()
+numComments=4
