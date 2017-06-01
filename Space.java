@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class Space extends World
 {
-    private static final int WIDTH = 640;
+    private static final int WIDTH = 480;
     private static final int HEIGHT = 480;
     private static final int ROW_LENGHT = 500;
     private static final int FIRING_INTERVAL = 60;
@@ -37,7 +37,7 @@ public class Space extends World
     private void prepare()
     {
         Shooter shooter = new Shooter();
-        addObject(shooter,WIDTH/2, HEIGHT-100);
+        addObject(shooter,WIDTH/2, HEIGHT-50);
 
         for(int i=0; i<11; i++) {
             addObject(new Alien(), (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 20);
