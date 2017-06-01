@@ -14,6 +14,8 @@ public class Space extends World
     private static final int FIRING_INTERVAL = 120;
 
     private int actCounter = 0;
+    Counter score = new Counter("Score: ");
+    Counter lives = new Counter("Lives: ");
 
     /**
      * Constructor for objects of class Space.
@@ -39,7 +41,9 @@ public class Space extends World
        createPlayer();
        createBarrier();
        createAliens();
-
+       lives.add(3);
+       addObject(score, 15, 90);
+       addObject(lives, 95, 90);
     }
     
     private void createPlayer(){
@@ -92,7 +96,29 @@ public class Space extends World
             addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 25+offset);
         }
     }
+    //the game!!!!
+
+        public void addPoints(int pts)
+    {
+        score.add(pts);
+    }
     
+    public void die()
+    {
+        lives.subtract(1);
+        if (lives.getValue() == 0) {
+            gameOver();
+        }
+         System.out.println("Died");
+        addObject(new Shooter(),WIDTH/2, HEIGHT-15);
+        //shot = 1;
+    }
+    
+    public void gameOver() 
+    {
+        addObject(new ScoreBoard(score.getValue()), getWidth()/2, getHeight()/2);
+        Greenfoot.stop();
+    }
     
     public void act()
     {

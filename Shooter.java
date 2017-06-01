@@ -46,8 +46,11 @@ public class Shooter extends SpaceActor
         {
             Actor bullet = getOneIntersectingObject(AlienBullet.class);
             if (bullet != null) {
+                ((Space)getWorld()).die();
+                getWorld().removeObject(bullet);
                 getWorld().removeObject(this);
                 Greenfoot.playSound("explosion.wav");
+                
             }    
         }
     }
