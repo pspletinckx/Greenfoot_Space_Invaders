@@ -36,9 +36,25 @@ public class Space extends World
      */
     private void prepare()
     {
+       createPlayer();
+       createBarrier();
+       createAliens();
+
+    }
+    
+    private void createPlayer(){
         Shooter shooter = new Shooter();
-        addObject(shooter,WIDTH/2, HEIGHT-50);
-        int offset = 40;
+        addObject(shooter,WIDTH/2, HEIGHT-50);}
+    private void createBarrier(){
+    
+    for(int i=0; i<4; i++){
+        Barrier barrier1 = new Barrier();
+        addObject(barrier1, 100 + i*90, 350);
+    }
+    
+}
+    private void createAliens(){
+            int offset = 40;
         //eerste rij
         Alien[] alien1 = new Alien[10];
         for(int i=0; i<10; i++) {
@@ -76,7 +92,8 @@ public class Space extends World
             addObject(alien1[i], (WIDTH-ROW_LENGHT)/2+i*ROW_LENGHT/10, 100+offset);
         }
     }
-
+    
+    
     public void act()
     {
         actCounter++;
