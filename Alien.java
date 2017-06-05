@@ -11,7 +11,7 @@ public class Alien extends SpaceActor
 {
     private int DEFAULT_POINTS = 40;
     private int START_STEPS = 20;
-    private int INTERVAL = 120;
+    private int INTERVAL = 60;
     public int direction = 1;
     private int steps = START_STEPS;
     private int pulse_counter = 0;
@@ -43,7 +43,7 @@ public class Alien extends SpaceActor
 
     public void move() //move function, called in step
     {
-        if(pulse_counter != INTERVAL){
+        if(pulse_counter % INTERVAL != 0){
             pulse_counter++;
             return;
         }
@@ -54,7 +54,7 @@ public class Alien extends SpaceActor
         }
         if(direction == 1) move_left();
         else move_right();
-
+        pulse_counter++;
     }
     
     private void move_left(){
