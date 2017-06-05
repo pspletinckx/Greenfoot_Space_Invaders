@@ -106,9 +106,12 @@ public class Space extends World
     public void die()
     {
         lives.subtract(1);
-        if (lives.getValue() == 0) {
+        System.out.println("Lives is now "+ lives.getValue());
+        if (lives.getValue() == 0) { 
             gameOver();
         }
+       
+        
          System.out.println("Died");
         addObject(new Shooter(),WIDTH/2, HEIGHT-15);
         //shot = 1;
@@ -117,6 +120,7 @@ public class Space extends World
     public void gameOver() 
     {
         addObject(new ScoreBoard(score.getValue()), getWidth()/2, getHeight()/2);
+        Greenfoot.playSound("game-over.wav");
         Greenfoot.stop();
     }
     

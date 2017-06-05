@@ -11,6 +11,9 @@ public class Alien extends SpaceActor
 {
     private int DEFAULT_POINTS = 40;
     private int START_STEPS = 20;
+    private String IMG_1 = "enemy1.gif";
+    private String IMG_2 = "enemy1-2.gif";
+    
     private int interval = 60;
     public int direction = 1;
     private int steps = START_STEPS;
@@ -56,6 +59,7 @@ public class Alien extends SpaceActor
         if(direction == 1) move_left();
         else move_right();
         pulse_counter++;
+        animate();
     }
     
     private void move_left(){
@@ -67,5 +71,17 @@ public class Alien extends SpaceActor
     private void come_closer(){
         moveVertically(2);
     }
+    public void animate(){
+        if(pulse_counter/interval %2 ==0){
+            setImage(getImageUri(1));
+        }else{
+            setImage(getImageUri(2));
+        }
+    }
+        public String getImageUri(int nr){
+            if(nr == 1) return IMG_1;
+            else return IMG_2;
+    }
 }
+
     

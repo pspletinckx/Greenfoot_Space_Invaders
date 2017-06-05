@@ -6,7 +6,7 @@ import java.util.List;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Barrier extends Actor
+public class Barrier extends SpaceActor
 {
     /**
      * Act - do whatever the Barrier wants to do. This method is called whenever
