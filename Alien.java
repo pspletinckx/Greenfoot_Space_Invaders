@@ -22,17 +22,13 @@ public class Alien extends SpaceActor
     public void act() 
     {
         if(getWorld() == null) return;
+        move();
         Actor bullet = getOneIntersectingObject(ShooterBullet.class);
         if (bullet != null) {
             ((Space) getWorld()).addPoints(getPointValue());
             getWorld().removeObject(bullet);
             getWorld().removeObject(this);
             Greenfoot.playSound("invaderkilled.wav"); //sound
-           
-        move();
-        if (getWorld().getObjects(Alien.class).isEmpty()){
-            getWorld().removeObject(this);
-        } ;
         }
    }
     
