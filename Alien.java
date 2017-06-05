@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
+import java.util.Iterator;
 /**
  * Write a description of class Alien here.
  * 
@@ -9,6 +10,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Alien extends SpaceActor
 {
     private int DEFAULT_POINTS = 40;
+    private int START_STEPS = 20;
+    private int INTERVAL = 120;
+    public int direction = 1;
+    private int steps = START_STEPS;
+    private int pulse_counter = 0;
     /**
      * Act - do whatever the Alien wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -22,6 +28,9 @@ public class Alien extends SpaceActor
             getWorld().removeObject(this);
             Greenfoot.playSound("invaderkilled.wav"); //sound
         }    
+        move();
+        if (getWorld().getObjects(Alien.class).isEmpty())return ;
+        System.out.println(getX()+" "+ getY());
     }
     
     public int getPointValue(){
@@ -32,4 +41,30 @@ public class Alien extends SpaceActor
         getWorld().addObject(new AlienBullet(), getX(), getY());
     }
 
+    public void move() //move function, called in step
+    {
+        if(pulse_counter != INTERVAL){
+            pulse_counter++;
+            return;
+        }
+            
+        steps++;
+        if(steps % (START_STEPS*2)==0){
+            direction *=-1;
+        }
+        if(direction == 1) move_left();
+        else move_right();
+
+    }
+    
+    private void move_left(){
+        moveHorizontally(-1);
+    }
+    private void move_right(){
+        moveHorizontally(1);
+    }
+    private void come_closer(){
+        
+    }
 }
+    
