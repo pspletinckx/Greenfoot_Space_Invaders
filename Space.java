@@ -16,6 +16,8 @@ public class Space extends World
     private int actCounter = 0;
     Counter score = new Counter("Score: ");
     Counter lives = new Counter("Lives: ");
+    
+    GifImage gifImage = new GifImage("MPbLYRdJzLKa4.gif");
 
     /**
      * Constructor for objects of class Space.
@@ -137,5 +139,7 @@ public class Space extends World
             }
             actCounter = 0;
         }
+        setBackground(gifImage.getCurrentImage());
+        
     }
 }
