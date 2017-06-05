@@ -11,7 +11,7 @@ public class Alien extends SpaceActor
 {
     private int DEFAULT_POINTS = 40;
     private int START_STEPS = 20;
-    private int INTERVAL = 60;
+    private int interval = 60;
     public int direction = 1;
     private int steps = START_STEPS;
     private int pulse_counter = 0;
@@ -21,17 +21,20 @@ public class Alien extends SpaceActor
      */
     public void act() 
     {
+        if(getWorld() == null) return;
         Actor bullet = getOneIntersectingObject(ShooterBullet.class);
         if (bullet != null) {
             ((Space) getWorld()).addPoints(getPointValue());
             getWorld().removeObject(bullet);
             getWorld().removeObject(this);
             Greenfoot.playSound("invaderkilled.wav"); //sound
-        }    
+           
         move();
-        if (getWorld().getObjects(Alien.class).isEmpty())return ;
-        System.out.println(getX()+" "+ getY());
-    }
+        if (getWorld().getObjects(Alien.class).isEmpty()){
+            getWorld().removeObject(this);
+        } ;
+        }
+   }
     
     public int getPointValue(){
         return DEFAULT_POINTS;
@@ -43,7 +46,7 @@ public class Alien extends SpaceActor
 
     public void move() //move function, called in step
     {
-        if(pulse_counter % INTERVAL != 0){
+        if(pulse_counter % interval != 0){
             pulse_counter++;
             return;
         }
@@ -51,6 +54,8 @@ public class Alien extends SpaceActor
         steps++;
         if(steps % (START_STEPS*2)==0){
             direction *=-1;
+            come_closer();
+            interval -=3;
         }
         if(direction == 1) move_left();
         else move_right();
@@ -64,7 +69,7 @@ public class Alien extends SpaceActor
         moveHorizontally(1);
     }
     private void come_closer(){
-        
+        moveVertically(2);
     }
 }
     
