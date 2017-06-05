@@ -54,7 +54,8 @@ public class Alien extends SpaceActor
         if(steps % (START_STEPS*2)==0){
             direction *=-1;
             come_closer();
-            interval -=3;
+            interval -=4;
+            if (interval <=12) ((Space)getWorld()).gameOver();
         }
         if(direction == 1) move_left();
         else move_right();
@@ -69,7 +70,7 @@ public class Alien extends SpaceActor
         moveHorizontally(1);
     }
     private void come_closer(){
-        moveVertically(2);
+        moveVertically(5);
     }
     public void animate(){
         if(pulse_counter/interval %2 ==0){
